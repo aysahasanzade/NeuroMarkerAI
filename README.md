@@ -20,3 +20,18 @@ graph TD
 
 ![Machine Learning](https://img.shields.io/badge/ML-RandomForest-FF6F00)
 ![Biomarkers](https://img.shields.io/badge/Biomarkers-IL6_VEGF_GFAP-0077B5)
+
+
+
+## Model Interpretability  
+SHAP analysis reveals which serum biomarkers drive predictions:  
+
+| Biomarker | Impact Direction | Clinical Relevance |  
+|-----------|------------------|--------------------|  
+| **IL-6**  | ↑ Tumor Risk     | Linked to inflammation |  
+| **GFAP**  | ↑ Tumor Risk     | Glial cell damage marker |  
+| **VEGF**  | ↓ Tumor Risk     | Anti-angiogenic effect |  
+
+
+
+![SHAP Summary](assets/shap_summary.png) 
