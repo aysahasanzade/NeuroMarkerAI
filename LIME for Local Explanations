@@ -1,0 +1,12 @@
+import lime
+import lime.lime_tabular
+
+explainer = lime.lime_tabular.LimeTabularExplainer(
+    X_train, 
+    feature_names=biomarker_names,
+    class_names=['Healthy', 'Tumor'],
+    mode='classification'
+)
+
+exp = explainer.explain_instance(X_test[0], model.predict_proba)
+exp.show_in_notebook()
