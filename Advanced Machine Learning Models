@@ -1,0 +1,39 @@
+Ensemble Learning (Stacking)
+
+from sklearn.ensemble import StackingClassifier
+from xgboost import XGBClassifier
+from sklearn.svm import SVC
+
+estimators = [
+    ('xgb', XGBClassifier(eval_metric='logloss')),
+    ('svm', SVC(probability=True))
+]
+
+stacker = StackingClassifier(
+    estimators=estimators,
+    final_estimator=RandomForestClassifier()
+)
+
+
+
+Deep Learning (PyTorch)
+import torch
+import torch.nn as nn
+
+class BiomarkerNN(nn.Module):
+    def __init__(self, input_dim):
+        super().__init__()
+        self.layers = nn.Sequential(
+            nn.Linear(input_dim, 64),
+            nn.ReLU(),
+            nn.Dropout(0.5),
+            nn.Linear(64, 1),
+            nn.Sigmoid()
+        )
+    
+    def forward(self, x):
+        return self.layers(x)
+
+model = BiomarkerNN(X.shape[1])
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+criterion = nn.BCELoss()
