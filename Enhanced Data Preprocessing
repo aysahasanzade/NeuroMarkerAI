@@ -1,0 +1,5 @@
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+
+imputer = IterativeImputer(random_state=42)
+X_imputed = imputer.fit_transform(X)
