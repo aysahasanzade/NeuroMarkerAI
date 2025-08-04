@@ -33,5 +33,3 @@ SHAP analysis reveals which serum biomarkers drive predictions:
 | **VEGF**  | ↓ Tumor Risk     | Anti-angiogenic effect |  
 
 
-
-![SHAP Summary](assets/shap_summary.png) 
