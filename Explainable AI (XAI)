@@ -1,0 +1,19 @@
+SHAP Analysis
+import shap
+
+explainer = shap.TreeExplainer(model)
+shap_values = explainer.shap_values(X_test)
+shap.summary_plot(shap_values, X_test, feature_names=biomarker_names)
+
+import shap
+
+# Explain your model’s predictions
+explainer = shap.Explainer(model)  # Replace with your trained model
+shap_values = explainer(X_test)    # X_test = biomarker data
+
+# Visualize the first prediction’s explanation
+shap.plots.waterfall(shap_values[0])
+
+
+shap.plots.beeswarm(shap_values, show=False)
+plt.savefig("results/shap_summary.png")  # Add to your README/docs
